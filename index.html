@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <section class="my-4">
+      <div class="container">
+        <form id="todoFormId">
+          <div class="mb-3">
+            <label for="todoText" class="form-label">What are you going to do?</label>
+            <input name="todoText" type="text" class="form-control" id="todoText" />
+          </div>
+          <div class="d-flex align-items-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-check mx-3 mb-0">
+              <input
+                role="button"
+                name="todoStatus"
+                class="form-check-input"
+                type="checkbox"
+                id="todoStatus"
+              />
+              <label role="button" class="form-check-label" for="todoStatus"> Pending </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="my-4">
+      <div class="container">
+        <h1>Todo List</h1>
+        <div class="input-group my-3">
+          <span class="input-group-text" id="searchTermSpan">Search</span>
+          <input
+            id="searchTerm"
+            type="text"
+            class="form-control w-50"
+            aria-label="Username"
+            aria-describedby="searchTermSpan"
+          />
+          <select id="filterStatus" class="form-select">
+            <option selected value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="complete">Complete</option>
+          </select>
+        </div>
+
+        <ul id="todo-list"></ul>
+      </div>
+    </section>
+
+    <!-- Template -->
+    <template id="todoTemplate">
+      <li>
+        <div class="todo alert" role="alert">
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="todo__title mb-0">TODO TITLE</p>
+            <div class="todo__action">
+              <button type="button" class="btn finish">Finish</button>
+              <button type="button" class="btn btn-primary edit">Edit</button>
+              <button type="button" class="btn btn-danger remove">Remove</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </template>
+
+    <script src="./src/index.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
